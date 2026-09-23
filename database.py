@@ -1,8 +1,14 @@
 import sqlite3
+import os
 from datetime import datetime
 
-import os
+# Render'da /data diskka, lokalda esa joriy papkaga
 DB_NAME = os.environ.get("DB_PATH", "school_bot.db")
+
+# Papka mavjud bo'lmasa yaratish
+_db_dir = os.path.dirname(DB_NAME)
+if _db_dir and not os.path.exists(_db_dir):
+    os.makedirs(_db_dir, exist_ok=True)
 
 def get_connection():
     conn = sqlite3.connect(DB_NAME)
