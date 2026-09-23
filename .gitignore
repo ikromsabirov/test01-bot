@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+school_bot.db
+temp_*.xlsx
+.idea/
+.vscode/
